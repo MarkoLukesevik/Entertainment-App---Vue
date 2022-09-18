@@ -24,7 +24,7 @@ export default {
 
     methods: {
         toggleBookmark() {
-            this.$store.commit('toggleBookmark', this.show.title)
+            this.$store.commit('toggleBookmark', this.show.title);
         }
     },
 

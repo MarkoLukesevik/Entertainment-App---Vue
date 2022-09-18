@@ -14,7 +14,6 @@
 
 <script>
     export default {
-
         created() {
             this.$store.dispatch('fetchData')
         }
@@ -23,6 +22,7 @@
 
 <style lang='scss'>
    @import '../src/styles/colors.scss';
+   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
 
    * {
         box-sizing: border-box;
@@ -31,19 +31,13 @@
    }
 
     #app {
-        font-family: Avenir, Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        // color: #2c3e50;
+        font-family: Outfit;
         background-color: $bgColor;
-        height: 100vh;
-        width: 100vw;
     }
 
     .nav {
         padding: 30px;
-        position: relative;
+        position: absolute;
         left: 32px;
         top: 32px;
         border-radius: 20px;
@@ -84,4 +78,52 @@
             bottom: 30px;
         }
     }
+
+    ::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track{
+        background-color: $primaryColor;
+    }
+
+    ::-webkit-scrollbar-thumb{
+        background-color: #5A698F;
+        border-radius: 8px;
+    }
+
+    @media only screen and (max-width: 992px) {
+        .nav {
+            width: 90%;
+            height: 72px;
+            flex-direction: row;
+            justify-content: center;
+
+            &-logo {
+                position: absolute;
+                left: 10px;
+                top: 22px;
+            }
+
+            &-links {
+                flex-direction: row;
+            }
+
+            &-image {
+                right: 10px;
+                top: 15px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .nav {
+            width: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 0px;
+        }
+    }
+
 </style>
